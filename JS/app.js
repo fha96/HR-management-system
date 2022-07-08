@@ -51,7 +51,6 @@ EmployeeInfo.prototype.renderInfo = function(){
     parentEl2[0].appendChild(nameEl);
     parentEl2[0].appendChild(departInfo);
     parentEl2[0].appendChild(salaryInfo);
-
 }
 
 const gazi =new EmployeeInfo("Ghazi Samer","Administration","senior","../assets/Ghazi.jpg");
