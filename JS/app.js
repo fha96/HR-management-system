@@ -2,9 +2,13 @@
 
 //Creat a construstor
 const employeeArray=[];
-const parentEl =document.getElementsByClassName("card");
-console.log(parentEl);
-const parentEl2=document.getElementsByClassName("container");
+
+// const parentEl =document.getElementsByClassName("card");
+// console.log(parentEl.length);
+
+// const parentEl2=document.getElementsByClassName("container");
+const mainSec=document.createElement("main");
+
 function EmployeeInfo(fullName,depatment,level,img){
     this.id = Math.floor(1000+Math.random()*9000);
     this.fullName=fullName;
@@ -33,8 +37,13 @@ EmployeeInfo.prototype.calculateSalary = function(){
 // document.write("Employee"+"   :   "+"Salary");
 EmployeeInfo.prototype.renderInfo = function(){
     // document.write(`<p>${this.fullName} : ${this.calculateSalary()} JOD </p>`);
-    // get an element
-   // const imgElement=document.getElementById("prsImg");
+    //creat div elements
+    const imgDiv=document.createElement("div");
+    const nameDiv=document.createElement("div");
+    const departDive=document.createElement("div");
+    const salaryDiv=document.createElement("div");
+
+    // creat content element
     const imgElement=document.createElement("img");
     const nameEl=document.createElement("h4");
     const departInfo=document.createElement("p");
@@ -47,12 +56,16 @@ EmployeeInfo.prototype.renderInfo = function(){
     imgElement.alt=this.fullName;
     imgElement.style.width="23%";
     //append to dom
-    parentEl[0].appendChild(imgElement);
-    parentEl2[0].appendChild(nameEl);
-    parentEl2[0].appendChild(departInfo);
-    parentEl2[0].appendChild(salaryInfo);
+    mainSec.appendChild(imgDiv.appendChild(imgElement));
+    document.body.appendChild(mainSec);
+    mainSec.appendChild(nameDiv.appendChild(nameEl));
+    document.body.appendChild(nameDiv);
+    mainSec.appendChild(departDive.appendChild(departInfo));
+    document.body.appendChild(departDive);
+    mainSec.appendChild(salaryDiv.appendChild(salaryInfo));
+    document.body.appendChild(salaryDiv);
+    mainSec.style.cssText="text-align : center";
 }
-
 const gazi =new EmployeeInfo("Ghazi Samer","Administration","senior","../assets/Ghazi.jpg");
 const lana =new EmployeeInfo("Lana Ali","Finance","senior","../assets/Lana.jpg");
 const tamara =new EmployeeInfo("Tamara Ayoub","Marketing","senior","../assets/Tamara.jpg");
@@ -64,7 +77,6 @@ const hadi =new EmployeeInfo("Hadi Ahmad","Finance","mid-senior","../assets/Hadi
 
 function renderHomePage(){
 for(let i=0;i<employeeArray.length;i++){
-    // console.log(employeeArray[i]);
     employeeArray[i].renderInfo();
 }
 }
