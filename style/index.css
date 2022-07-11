@@ -27,17 +27,22 @@ li a:hover {
 footer{
     padding: 10px;
     bottom: 0%;
-    position: fixed;
-    text-align: left;
+    position: relative;
+    text-align: center;
     background-color: yellowgreen;
     width: 100%;
 }
 .f1 a{
     font-style: italic;
-    
+    display: flex;
+    justify-content: center; 
 }
 
 h3{
     font-style: italic;
     font-size: 20px;
+}
+body {
+    background-image: url(https://th.bing.com/th/id/R.d66c5a9b20e1281c8ccc1f7cf01bb44c?rik=WR4KVlNO5cnlJQ&riu=http%3a%2f%2fcdn.wallpapersafari.com%2f22%2f82%2f0yjurN.jpg&ehk=%2bWHKeR64zMP%2bU4B0Vvv8DZaMZSqJrtpLlB73gCb1TIA%3d&risl=&pid=ImgRaw&r=0);
+    background-size: 30000px 30000px;
 }
