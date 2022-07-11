@@ -2,11 +2,6 @@
 
 //Creat a construstor
 const employeeArray=[];
-
-// const parentEl =document.getElementsByClassName("card");
-// console.log(parentEl.length);
-
-// const parentEl2=document.getElementsByClassName("container");
 const mainSec=document.createElement("main");
 
 function EmployeeInfo(fullName,depatment,level,img){
